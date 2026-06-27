@@ -1,0 +1,846 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:var(--container);
+
+    margin:auto;
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:18px 35px;
+
+background:#1565C0;
+
+color:white;
+
+font-size:18px;
+
+font-weight:600;
+
+border-radius:12px;
+
+text-decoration:none;
+
+transition:.3s;
+
+box-shadow:0 15px 35px rgba(21,101,192,.25);
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+background:#0D47A1;
+
+}
+
+.header{
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+}
+
+.nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 0;
+
+}
+
+.logo img{
+
+    height:60px;
+
+}
+
+.hero{
+
+padding:70px 0;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:70px;
+
+align-items:center;
+
+}
+
+.hero-content h1{
+
+font-size:58px;
+
+font-weight:700;
+
+line-height:1.1;
+
+margin:15px 0;
+
+}
+
+.hero-content h2{
+
+font-size:44px;
+
+color:var(--primary);
+
+margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#666;
+
+margin-bottom:30px;
+
+}
+
+.rating{
+
+display:inline-block;
+
+background:#FFF4CC;
+
+padding:10px 18px;
+
+border-radius:50px;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-bottom:20px;
+
+}
+
+.price{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+margin:25px 0;
+
+}
+
+.old-price{
+
+text-decoration:line-through;
+
+font-size:24px;
+
+color:#999;
+
+}
+
+.new-price{
+
+font-size:52px;
+
+font-weight:bold;
+
+color:#1565C0;
+
+}
+
+.badges{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+margin-bottom:35px;
+
+}
+
+.badges span{
+
+background:white;
+
+padding:12px 18px;
+
+border-radius:50px;
+
+box-shadow:var(--shadow);
+
+font-size:15px;
+
+}
+
+.hero-image img{
+
+width:100%;
+
+border-radius:25px;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.hero-image img:hover{
+
+transform:scale(1.02);
+
+}
+
+.problem{
+
+padding:100px 0;
+
+background:white;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+color:#666;
+
+font-size:18px;
+
+}
+
+.problem-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+}
+
+.problem-card{
+
+background:#F9FAFB;
+
+padding:35px;
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+transition:.3s;
+
+}
+
+.problem-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.icon{
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.problem-card h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+
+}
+
+.problem-card p{
+
+line-height:1.7;
+
+color:#666;
+
+}
+
+.features{
+
+    padding:100px 0;
+
+    background:#f8fafc;
+
+}
+
+.features-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.feature-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.feature-icon{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+.gallery{
+
+padding:100px 0;
+
+background:white;
+
+}
+
+.gallery-wrapper{
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.gallery-main-image{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:var(--shadow);
+
+margin-bottom:25px;
+
+}
+
+.gallery-thumbs{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.thumb{
+
+width:90px;
+
+height:90px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+cursor:pointer;
+
+border:3px solid transparent;
+
+transition:.3s;
+
+}
+
+.thumb:hover{
+
+transform:scale(1.08);
+
+}
+
+.thumb.active{
+
+border-color:var(--primary);
+
+}
+
+.offer-badge{
+    display:inline-block;
+    background:#ff5722;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.price{
+    display:flex;
+    gap:25px;
+    margin:30px 0;
+}
+
+.old-price-box,
+.new-price-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.old-price-box small,
+.new-price-box small{
+    color:#666;
+    margin-bottom:6px;
+}
+
+.old-price{
+    font-size:26px;
+    color:#888;
+    text-decoration:line-through;
+}
+
+.new-price{
+    font-size:52px;
+    color:#1565C0;
+    font-weight:700;
+}
+
+.cta-group{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-top:30px;
+}
+
+.stock{
+    color:#16a34a;
+    font-weight:600;
+}
+
+.reviews{
+    padding:100px 0;
+    background:#f8fafc;
+}
+
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.review-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.review-card:hover{
+    transform:translateY(-8px);
+}
+
+.review-stars{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.review-comment{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.review-user h4{
+    margin-bottom:5px;
+}
+
+.review-user span{
+    color:#888;
+    font-size:14px;
+}
+
+.stars{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+}
+
+/* Floating WhatsApp */
+
+.floating-whatsapp{
+
+position:fixed;
+
+right:25px;
+
+bottom:100px;
+
+z-index:999;
+
+}
+
+.floating-whatsapp a{
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+transition:.3s;
+
+}
+
+.floating-whatsapp img{
+
+width:34px;
+
+filter:invert(1);
+
+}
+
+.floating-whatsapp a:hover{
+
+transform:scale(1.1);
+
+}
+
+/* Sticky Bottom Bar */
+
+.sticky-order{
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+background:white;
+
+padding:14px 30px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 -10px 30px rgba(0,0,0,.12);
+
+z-index:998;
+
+}
+
+.sticky-price span{
+
+display:block;
+
+font-size:13px;
+
+color:#666;
+
+}
+
+.sticky-price strong{
+
+font-size:30px;
+
+color:#1565C0;
+
+}
+
+.sticky-btn{
+
+background:#1565C0;
+
+color:white;
+
+padding:16px 30px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.sticky-btn:hover{
+
+background:#0D47A1;
+
+}
+
+@media(max-width:768px){
+
+.sticky-order{
+
+padding:12px 16px;
+
+}
+
+.sticky-price strong{
+
+font-size:24px;
+
+}
+
+.sticky-btn{
+
+padding:14px 20px;
+
+font-size:15px;
+
+}
+
+.floating-whatsapp{
+
+right:15px;
+
+bottom:90px;
+
+}
+
+.floating-whatsapp a{
+
+width:58px;
+
+height:58px;
+
+}
+
+}
+
+.faq{
+
+padding:100px 0;
+
+background:#fff;
+
+}
+
+.faq-item{
+
+background:#f8fafc;
+
+border-radius:16px;
+
+margin-bottom:18px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.faq-question{
+
+width:100%;
+
+padding:22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+padding:0 20px;
+
+transition:.3s;
+
+color:#666;
+
+line-height:1.7;
+
+}
+
+.order{
+
+padding:100px 0;
+
+background:#f8fafc;
+
+}
+
+#order-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+#order-form input,
+#order-form textarea{
+
+padding:18px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+font-size:16px;
+
+font-family:inherit;
+
+}
+
+#order-form textarea{
+
+min-height:120px;
+
+resize:vertical;
+
+}
+
+#order-status{
+
+margin-top:20px;
+
+text-align:center;
+
+font-weight:600;
+
+}
