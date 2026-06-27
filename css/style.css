@@ -844,3 +844,35 @@ text-align:center;
 font-weight:600;
 
 }
+
+.success-box{
+
+    background:#ECFDF5;
+
+    border:2px solid #22C55E;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+.success-box h3{
+
+    color:#15803D;
+
+    margin-bottom:10px;
+
+}
+
+.success-box strong{
+
+    font-size:22px;
+
+    color:#1565C0;
+
+}

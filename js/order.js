@@ -1,22 +1,88 @@
-document.addEventListener("submit",async function(e){
+document.addEventListener("submit", async function (e) {
 
-if(e.target.id!=="order-form") return;
+    if (e.target.id !== "order-form") return;
 
-e.preventDefault();
+    e.preventDefault();
 
-document.getElementById("order-status").innerHTML="Sending...";
+    const status = document.getElementById("order-status");
 
-const form=new FormData(e.target);
+    status.innerHTML = "⏳ Sending your order...";
 
-const data=Object.fromEntries(form.entries());
+    const form = new FormData(e.target);
 
-console.log(data);
+    const data = {
 
-/*
-Google Apps Script
-will go here
-*/
+        product: PRODUCT.name,
 
-document.getElementById("order-status").innerHTML="✅ Order Submitted Successfully!";
+        price: PRODUCT.price,
+
+        name: form.get("name"),
+
+        phone: form.get("phone"),
+
+        address: form.get("address"),
+
+        quantity: form.get("quantity"),
+
+        note: form.get("note")
+
+    };
+
+    try {
+
+        const response = await fetch(STORE.api, {
+
+            method: "POST",
+
+            redirect: "follow",
+
+            headers: {
+
+                "Content-Type": "text/plain;charset=utf-8"
+
+            },
+
+            body: JSON.stringify(data)
+
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            status.innerHTML = `
+
+                <div class="success-box">
+
+                    <h3>✅ Order Confirmed!</h3>
+
+                    <p>Your Order ID:</p>
+
+                    <strong>${result.orderID}</strong>
+
+                </div>
+
+            `;
+
+            document.getElementById("order-form").reset();
+
+            // Meta Pixel (later)
+            if (typeof fbq === "function") {
+                fbq("track", "Lead");
+            }
+
+        } else {
+
+            status.innerHTML = "❌ " + result.error;
+
+        }
+
+    } catch (err) {
+
+        console.error(err);
+
+        status.innerHTML = "❌ Failed to connect to server.";
+
+    }
 
 });
