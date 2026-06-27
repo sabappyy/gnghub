@@ -10,23 +10,23 @@ document.addEventListener("submit", async function (e) {
 
     const form = new FormData(e.target);
 
-    const data = {
+const data = {
 
-        product: PRODUCT.name,
+    product: PRODUCT.name,
 
-        price: PRODUCT.price,
+    price: PRODUCT.price,
 
-        name: form.get("name"),
+    quantity: form.get("quantity"),
 
-        phone: form.get("phone"),
+    name: form.get("name"),
 
-        address: form.get("address"),
+    phone: form.get("phone"),
 
-        quantity: form.get("quantity"),
+    address: form.get("address"),
 
-        note: form.get("note")
+    note: form.get("note"),
 
-    };
+};
 
     try {
 

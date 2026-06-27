@@ -1,22 +1,101 @@
-document.addEventListener("submit",async function(e){
+// =====================================
+// Meta Pixel Event Functions
+// Gadget & Glamour Hub
+// =====================================
 
-if(e.target.id!=="order-form") return;
+let checkoutTracked = false;
 
-e.preventDefault();
+// -------------------------------
+// View Product
+// -------------------------------
+function trackViewContent() {
 
-document.getElementById("order-status").innerHTML="Sending...";
+    if (typeof fbq !== "function") return;
 
-const form=new FormData(e.target);
+    fbq("track", "ViewContent", {
 
-const data=Object.fromEntries(form.entries());
+        content_name: PRODUCT.name,
+        content_ids: [PRODUCT.id],
+        content_type: "product",
+        content_category: "Mobile Accessories",
 
-console.log(data);
+        value: PRODUCT.price,
+        currency: "BDT"
 
-/*
-Google Apps Script
-will go here
-*/
+    });
 
-document.getElementById("order-status").innerHTML="✅ Order Submitted Successfully!";
+}
 
-});
+// -------------------------------
+// Order Button Click
+// -------------------------------
+function trackInitiateCheckout() {
+
+    if (typeof fbq !== "function") return;
+
+    fbq("track", "InitiateCheckout", {
+
+        content_name: PRODUCT.name,
+        content_ids: [PRODUCT.id],
+        content_type: "product",
+
+        value: PRODUCT.price,
+        currency: "BDT"
+
+    });
+
+}
+
+// -------------------------------
+// Successful Order
+// -------------------------------
+function trackLead(orderID = "") {
+
+    if (typeof fbq !== "function") return;
+
+    fbq("track", "Lead", {
+
+        content_name: PRODUCT.name,
+        content_ids: [PRODUCT.id],
+        content_type: "product",
+
+        value: PRODUCT.price,
+        currency: "BDT",
+
+        order_id: orderID
+
+    });
+
+}
+
+// -------------------------------
+// WhatsApp Click
+// -------------------------------
+function trackContact() {
+
+    if (typeof fbq !== "function") return;
+
+    fbq("track", "Contact", {
+
+        method: "WhatsApp"
+
+    });
+
+}
+
+// -------------------------------
+// Hero Order Button
+// -------------------------------
+function handleOrderClick() {
+
+    if (!checkoutTracked) {
+
+        trackInitiateCheckout();
+
+        checkoutTracked = true;
+
+    }
+
+    return true;
+
+}
