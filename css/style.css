@@ -876,3 +876,38 @@ font-weight:600;
     color:#1565C0;
 
 }
+
+/* ===== Fix Confirm Order Button ===== */
+
+.order-section{
+    padding:100px 0 180px;
+    background:#f8fafc;
+}
+
+#order-form{
+    padding-bottom:120px;
+}
+
+#order-form .btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+}
+/* ===== Fix Confirm Order Button ===== */
+
+.order-section{
+    padding:100px 0 180px;
+    background:#f8fafc;
+}
+
+#order-form{
+    padding-bottom:120px;
+}
+
+#order-form .btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+}

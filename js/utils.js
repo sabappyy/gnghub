@@ -1,50 +1,49 @@
-function changeGallery(image,element){
+let currentSlide = 0;
 
-document.getElementById("gallery-main").src=image;
+function showSlide(index){
 
-document.querySelectorAll(".gallery-thumb").forEach(img=>{
+    const slides = document.querySelectorAll(".gallery-slide");
 
-img.classList.remove("active");
+    if(!slides.length) return;
 
-});
+    slides.forEach(slide => slide.classList.remove("active"));
 
-element.classList.add("active");
+    slides[index].classList.add("active");
 
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+function nextSlide(){
 
-anchor.addEventListener("click",function(e){
+    const slides = document.querySelectorAll(".gallery-slide");
 
-e.preventDefault();
+    if(!slides.length) return;
 
-document.querySelector(this.getAttribute("href")).scrollIntoView({
+    currentSlide++;
 
-behavior:"smooth"
-
-});
-
-});
-
-});
-
-function toggleFAQ(index){
-
-    const answer = document.getElementById(`faq-${index}`);
-    const icon = document.getElementById(`faq-icon-${index}`);
-
-    if(answer.style.maxHeight){
-
-        answer.style.maxHeight = null;
-        answer.style.padding = "0 20px";
-        icon.innerHTML = "+";
-
-    }else{
-
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        answer.style.padding = "20px";
-        icon.innerHTML = "−";
-
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
     }
 
+    showSlide(currentSlide);
+
 }
+
+function prevSlide(){
+
+    const slides = document.querySelectorAll(".gallery-slide");
+
+    if(!slides.length) return;
+
+    currentSlide--;
+
+    if(currentSlide < 0){
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+
+}
+
+setInterval(() => {
+    nextSlide();
+}, 4000);

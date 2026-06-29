@@ -1,14 +1,11 @@
 function Gallery() {
 
-    const thumbs = PRODUCT.images.map((img,index)=>`
-
+    const slides = PRODUCT.images.map((img, index) => `
         <img
             src="${img}"
-            class="gallery-thumb ${index===0?'active':''}"
-            onclick="changeGallery('${img}',this)"
+            class="gallery-slide ${index===0 ? 'active' : ''}"
             alt="Product Image ${index+1}"
         >
-
     `).join("");
 
     return `
@@ -18,27 +15,19 @@ function Gallery() {
 <div class="container">
 
 <div class="section-title">
-
 <h2>Product Gallery</h2>
-
 <p>See every detail before you order.</p>
-
 </div>
 
-<div class="gallery-container">
+<div class="gallery-slider">
 
-<img
-id="gallery-main"
-class="gallery-main"
-src="${PRODUCT.images[0]}"
-alt="${PRODUCT.name}"
->
+<button class="gallery-prev" onclick="prevSlide()">❮</button>
 
-<div class="gallery-thumbs">
-
-${thumbs}
-
+<div class="gallery-wrapper">
+${slides}
 </div>
+
+<button class="gallery-next" onclick="nextSlide()">❯</button>
 
 </div>
 
